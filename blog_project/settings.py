@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'rest_auth',
     'rest_auth.registration',
+    # doc
 
     # local
     'posts.apps.PostsConfig'
@@ -76,11 +77,11 @@ MIDDLEWARE = [
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 SITE_ID = 1
 ROOT_URLCONF = 'blog_project.urls'
-
+BASE_DIR = os.getcwd()
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [f'{BASE_DIR}/blog_project/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
